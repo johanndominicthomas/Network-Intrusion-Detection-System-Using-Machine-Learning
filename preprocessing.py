@@ -65,7 +65,8 @@ def split_data(df):
     	 
     x=df.drop('Label',axis=1) #Features (excluding Label)
     y=df['Label'] # Label (target variable - attack or anomaly)
-    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
+    
+    x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42,stratify=y)
     print(f"Data split into train and test sets: {x_train.shape[0]} train samples , {x_test.shape[0]} test samples.")
     return x_train,x_test,y_train,y_test
     
@@ -86,6 +87,8 @@ if __name__=="__main__":
     # Step 1: Load the Data
     df=load_data(combined_file_path)
     
+    df.columns = df.columns.str.strip()  # Remove any leading or trailing spaces
+    
     #Step 2: Clean the data
     df=clean_data(df)
     
@@ -94,8 +97,24 @@ if __name__=="__main__":
     
     print("Columns in the DataFrame:", df.columns)
     
+    if 'Label' in df.columns:
+    	x = df.drop('Label', axis=1)  # Features (excluding Label)
+    	y = df['Label']  # Label (target variable)
+    else:
+    	print("The 'Label' column is missing!")
+    	exit()
+    
+    print("Class distribution before split:")
+    print(y.value_counts())
+    
     #Step 4:Split the data into train and test data
     x_train,x_test,y_train,y_test=split_data(df)
+    
+    print("\nClass Distribution in the training set:")
+    print(y_train.value_counts())
+    
+    print("\nClass Distribution in the testing set:")
+    print(y_test.value_counts())
     
     #Step 5: Save preprocessed data for further use in project
     save_preprocessed_data(df,preprocessed_file_path)
