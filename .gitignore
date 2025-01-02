@@ -1,0 +1,5 @@
+# Ignore large dataset files and folder
+Datasets/
+combined_cic_ids2017.csv
+preprocessed_cic_ids2017_10percent.csv
+
