@@ -3,4 +3,5 @@ Datasets/
 combined_cic_ids2017.csv
 preprocessed_cic_ids2017_10percent.csv
 __pycache__/
-*.pkl
+nids_xgboost_regressor_model.pkl
+preprocessed_cic_ids2017.csv

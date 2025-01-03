@@ -48,8 +48,8 @@ def save_model(model,filename):
 #Main script execution
 if __name__=="__main__":
 	#Define file paths
-	preprocessed_file_path='preprocessed_cic_ids2017_10percent.csv'
-	model_filename='nids_xgboost_regressor_model.pkl' #Trained model file name
+	preprocessed_file_path='preprocessed_cic_ids2017.csv'
+	model_filename='nids_xgboost_regressor_model_100%_dataset.pkl' #Trained model file name
 	
 	#Load preprocessed data
 	df=load_data(preprocessed_file_path)

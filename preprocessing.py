@@ -81,8 +81,8 @@ def save_preprocessed_data(df,file_path):
     
 if __name__=="__main__":
     #Update the path of the combined csv file to combined file path
-    combined_file_path='combined_cic_ids2017_10percent.csv'
-    preprocessed_file_path='preprocessed_cic_ids2017_10percent.csv'
+    combined_file_path='combined_cic_ids2017.csv'
+    preprocessed_file_path='preprocessed_cic_ids2017.csv'
     
     # Step 1: Load the Data
     df=load_data(combined_file_path)
