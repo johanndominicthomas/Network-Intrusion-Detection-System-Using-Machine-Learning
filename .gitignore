@@ -5,5 +5,7 @@ preprocessed_cic_ids2017_10percent_regressor.csv
 preprocessed_cic_ids2017_regressor.csv
 __pycache__/
 nids_xgboost_regressor_model.pkl
+preprocessed_cic_ids2017_classifier.csv
+label_classes.npy
 
 
